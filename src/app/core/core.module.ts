@@ -6,18 +6,14 @@ import { InitService } from './services/init/init.service';
 import { LoggerInterceptorService } from './interceptor/logger-interceptor.service';
 import { HeaderComponent} from './header/header.component';
 import { TodoComponent} from '../modules/todo/containers/todo/todo.component';
-import { HomeComponent} from '../modules/home/containers/home/home.component';
 import { ContactComponent} from '../modules/contact/containers/contact/contact.component';
 import { NavbarComponent} from '../core/navbar/navbar.component';
 import { DetailsComponent } from './details/details.component';
-import {AboutPageComponent} from '../modules/about/containers/about-page/about-page.component';
 
 const COMPONENTS = [
   HeaderComponent,
   TodoComponent,
-  HomeComponent,
   ContactComponent,
-  AboutPageComponent,
   NavbarComponent
 ];
 
