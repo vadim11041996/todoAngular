@@ -4,8 +4,11 @@ import { ContactComponent } from './containers/contact/contact.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
-  declarations: [ContactComponent]
+  exports: [
+    ContactComponent,
+  ],
+  declarations: [ContactComponent],
 })
 export class ContactModule { }
