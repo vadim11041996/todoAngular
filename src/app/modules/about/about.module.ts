@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about/about.component';
+import { AboutPageComponent } from './containers/about-page/about-page.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [AboutComponent]
+  declarations: [AboutPageComponent]
 })
 export class AboutModule { }
