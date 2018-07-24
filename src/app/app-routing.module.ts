@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HeaderComponent } from './core/header/header.component';
- 
+import { HomeComponent } from './modules/home/containers/home/home.component';
+import { TodoComponent } from './modules/todo/containers/todo/todo.component';
+
 const routes: Routes = [
   {
-    path: '/user',
-    component: HeaderComponent
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'todo',
+    component: TodoComponent
   },
 ];
 
