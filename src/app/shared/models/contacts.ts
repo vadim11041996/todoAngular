@@ -1,6 +1,6 @@
 interface Contacts {
-  name: string;
-  surname: string;
+  firstname: string;
+  lastname: string;
   email: string;
   text: string;
 }

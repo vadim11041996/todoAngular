@@ -1,19 +1,33 @@
 <form  id="userform">
 
-  First name:<br>
-  <input type="text" name="firstname" value="MEnter your first name">
-  <br><br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Enter your last name">
-  <br><br>
-  Email:<br>
-  <input type="text" name="lastname" value="Enter your email here...">
-  <br><br>
-  Message:<br>
-  <textarea name="comment"  form="userform">Enter your message  here...</textarea>
-  <br><br>
+  <h2> Contacts </h2><br>
+  <p>If you want to contact us, please enter your data in the form bellow</p><br><br>
 
-  <button type="button" (click)="onSubmit(submit)"> Submit</button>
+  <div class="form-group">
+    First name:<br>
+    <input
+      type="text" name="firstname" required [(ngModel)]="contacts.firstname"  value="Enter your first name">
+    <br><br>
+  </div>
+
+  <div class="form-group">
+    Last name:<br>
+    <input type="text" name="lastname" required [(ngModel)]="contacts.lastname"  value="Enter your last name">
+    <br><br>
+  </div>
+
+  <div class="form-group">
+    Email:<br>
+    <input type="text" name="email"required [(ngModel)]="contacts.email" value="Enter your email here...">
+    <br><br>
+  </div>
+
+  <div class="form-group">
+    Message:<br>
+    <textarea name="text"  required [(ngModel)]="contacts.text"  form="userform">Enter your message  here...</textarea>
+    <br><br>
+  </div>
+
+  <button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="onSubmit(submit)"> Submit</button>
 
 </form>
-

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import Contacts from '../../../../shared/models/contacts';
+
 
 @Component({
   selector: 'app-contact',
@@ -9,22 +10,36 @@ import Contacts from '../../../../shared/models/contacts';
 export class ContactComponent implements OnInit {
   submitted = false;
 
-  contacts: Array<Contacts> = [
+  contacts =
     {
-      name: 'Insert name',
-      surname: 'Insert surname',
-      email: 'Insert email',
-      text: 'Insert text',
-    }
-  ];
+      firstname: '',
+      lastname: '',
+      email: '',
+      text: '',
+    };
 
-  constructor(){ }
-
-  onSubmit (contacts: string) {
-    console.log(data);
-    this.submitted = true;
+  constructor() {
   }
 
-  ngOnInit() { }
+  onSubmit() {
+    console.log(this.contacts);
+    this.submitted = true;
 
+    let alerta = '';
+    for (const key of Object.keys(this.contacts)) {
+      console.log(key);
+      const val = this.contacts[key];
+      if (!val || val.trim() === '') {
+        alerta += `Please enter your ${key} \n`;
+      }
+    }
+    if (alerta) {
+      alert(alerta);
+    }
+  }
+
+  ngOnInit() {
+  }
+
+  // alert('Success! \n\n' + JSON.stringify(this.name));
 }
