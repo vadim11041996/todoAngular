@@ -10,6 +10,7 @@ import { HomeComponent} from '../modules/home/containers/home/home.component';
 import { ContactComponent} from '../modules/contact/containers/contact/contact.component';
 import { AboutComponent} from '../modules/about/containers/about/about.component';
 import { NavbarComponent} from '../core/navbar/navbar.component';
+import { DetailsComponent } from './details/details.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -35,7 +36,8 @@ export function initAppFactory(initService: InitService) {
     ...MODULES
   ],
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
+    DetailsComponent
   ],
   exports: [
     ...COMPONENTS,

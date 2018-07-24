@@ -1,3 +1,30 @@
-<h1>ToDo</h1>
+<div class="container">
 
- 
+  <h1>ToDo</h1>
+  <form>
+    <div class="form-group" *ngFor="let todo of todos">
+      <em class="form-control" >
+        <h4>
+          Todo: {{todo.name}}
+        </h4>
+      </em><hr>
+      <em class="form-control">
+        <h4>
+          Finished: {{todo.finished}}
+        </h4>
+      </em><hr>
+      <em class="form-control">
+        <h4>
+          Date: {{todo.finishedAt.date}}
+        </h4>
+      </em><hr>
+      <em class="form-control">
+        <h4>
+          Todo description: {{todo.finishedAt.description}}
+        </h4>
+      </em><hr>
+    </div>
+  </form>
+  <button class='btn btn-success'>Click</button>
+
+</div>
