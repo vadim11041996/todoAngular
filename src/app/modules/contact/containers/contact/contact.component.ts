@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Contacts from '../../../../shared/models/contacts';
 
 @Component({
   selector: 'app-contact',
@@ -6,15 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  submitted = false;
 
-  constructor(
-    public name: string,
-    public surname: string,
-    public email: string,
-    public text: string,
-  ) { }
+  contacts: Array<Contacts> = [
+    {
+      name: 'Insert name',
+      surname: 'Insert surname',
+      email: 'Insert email',
+      text: 'Insert text',
+    }
+  ];
 
-  ngOnInit() {
+  constructor(){ }
+
+  onSubmit (contacts: string) {
+    console.log(data);
+    this.submitted = true;
   }
+
+  ngOnInit() { }
 
 }

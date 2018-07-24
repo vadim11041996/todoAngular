@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './modules/home/containers/home/home.component';
 import { TodoComponent } from './modules/todo/containers/todo/todo.component';
@@ -14,13 +14,8 @@ const routes: Routes = [
     component: TodoComponent
   },
   {
-    path: '',
+    path: 'contact',
     component: ContactComponent
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const appRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

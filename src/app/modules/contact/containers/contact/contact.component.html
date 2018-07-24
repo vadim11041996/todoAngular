@@ -1,20 +1,19 @@
-<form  ng-submit="submit()" id="userform">
+<form  id="userform">
 
   First name:<br>
-  <input type="text" name="firstname" value="Mickey">
-  <br>
+  <input type="text" name="firstname" value="MEnter your first name">
+  <br><br>
   Last name:<br>
-  <input type="text" name="lastname" value="Mouse">
+  <input type="text" name="lastname" value="Enter your last name">
   <br><br>
   Email:<br>
-  <input type="text" name="lastname" value="Mouse">
+  <input type="text" name="lastname" value="Enter your email here...">
   <br><br>
   Message:<br>
-  <input type="text" name="lastname" value="Mouse">
   <textarea name="comment"  form="userform">Enter your message  here...</textarea>
   <br><br>
 
-  <input type="submit" value="Submit">
+  <button type="button" (click)="onSubmit(submit)"> Submit</button>
 
 </form>
 

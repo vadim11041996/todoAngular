@@ -7,7 +7,6 @@ import { LoggerInterceptorService } from './interceptor/logger-interceptor.servi
 import { HeaderComponent} from './header/header.component';
 import { TodoComponent} from '../modules/todo/containers/todo/todo.component';
 import { HomeComponent} from '../modules/home/containers/home/home.component';
-//import { ContactComponent} from '../modules/contact/containers/contact/contact.component';
 import { AboutComponent} from '../modules/about/containers/about/about.component';
 import { NavbarComponent} from '../core/navbar/navbar.component';
 import { DetailsComponent } from './details/details.component';
@@ -16,7 +15,6 @@ const COMPONENTS = [
   HeaderComponent,
   TodoComponent,
   HomeComponent,
-  //ContactComponent,
   AboutComponent,
   NavbarComponent
 ];
