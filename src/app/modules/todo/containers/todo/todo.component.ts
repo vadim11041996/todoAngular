@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import Todos from '../../../../shared/models/todos';
 import {TodoService} from '../../todo.service';
 
 @Component({
@@ -10,27 +9,42 @@ import {TodoService} from '../../todo.service';
 export class TodoComponent implements OnInit, OnDestroy {
 
   todoss = [];
+  contactForm: FormGroup;
+  submitted = false;
 
-  todos: Array<Todos> = [
-      {
-        id: 1,
-        name: 'Run 10 km',
-        finished: false,
-        finishedAt: {
-          date: '08/10/2018',
-          description: 'Bla bla bla description',
-        }
-      }
-    ];
-
-  constructor(private todoService: TodoService) {
+  constructor(private todoService: TodoService, private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
+    this.contactForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      site: ['', UrlValidator],
+      message: ['', Validators.required]
+    });
+
     this.todoss = this.todoService.getAllTodos();
   }
 
-  ngOnDestroy() {
 
+  ngOnDestroy() {
   }
+
+
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.contactForm.controls;
+  }
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.contactForm.invalid) {
+      return;
+    }
+
+    alert('SUCCESS!! 💪 \n\n' + JSON.stringify(this.contactForm.value));
+  }
+
+
 }

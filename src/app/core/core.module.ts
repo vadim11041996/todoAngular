@@ -8,11 +8,13 @@ import { HeaderComponent} from './header/header.component';
 import { HomeComponent} from '../modules/home/containers/home/home.component';
 import { NavbarComponent} from '../core/navbar/navbar.component';
 import { DetailsComponent } from './details/details.component';
+import { FooterComponent } from './footer/footer.component';
 
 const COMPONENTS = [
   HeaderComponent,
   HomeComponent,
-  NavbarComponent
+  NavbarComponent,
+  FooterComponent
 ];
 
 const MODULES = [

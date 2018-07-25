@@ -1,4 +1,4 @@
-<div class="container" *ngFor="let todo of todos">
+<div class="container" >
   <form  id="userform" class="myForm">
 
     <h2> ToDo </h2>
@@ -10,7 +10,7 @@
                   class="form-control myInputStyle"
                   name="name"
                   placeholder="Enter your ToDo name"
-                  required [(ngModel)]="contacts.firstname">
+>
     </div>
 
     <div class="form-group">
@@ -19,7 +19,7 @@
              class="form-control form-control-sm myInputStyle"
              name="finished"
              placeholder="Enter your ToDo status"
-             required [(ngModel)]="contacts.lastname">
+             >
     </div>
 
     <div class="form-group ">
@@ -28,7 +28,7 @@
              class="form-control myInputStyle"
              name="finishedAt"
              placeholder="Enter your ToDo date here..."
-             required [(ngModel)]="contacts.email">
+             >
     </div>
 
     <div class="form-group">
@@ -36,7 +36,7 @@
       <textarea name="description"
                 rows="10"
                 class="form-control myInputStyle"
-                required [(ngModel)]="contacts.text">Enter your ToDo here...
+                >Enter your ToDo here...
     </textarea>
     </div>
 
@@ -44,5 +44,3 @@
 
   </form>
 </div>
-
-
