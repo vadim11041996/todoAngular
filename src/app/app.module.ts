@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import {appRoutes} from './app-routing.module';
-import { ContactModule } from './modules/contact/contact.module';
+import { appRoutes} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +13,6 @@ import { ContactModule } from './modules/contact/contact.module';
     appRoutes,
     BrowserModule,
     CoreModule,
-    ContactModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './containers/about/about.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AboutComponent} from './containers/about/about.component';
 
 @NgModule({
-  declarations: [AboutComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    FormsModule,
+    RouterModule.forChild([{
+      path: '',
+      component: AboutComponent
+    }])
+  ],
+  declarations: [AboutComponent],
 })
 export class AboutModule { }

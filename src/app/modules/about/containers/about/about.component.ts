@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import About from '../../../../shared/models/about';
 
 @Component({
   selector: 'app-about',

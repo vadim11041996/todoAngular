@@ -5,17 +5,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InitService } from './services/init/init.service';
 import { LoggerInterceptorService } from './interceptor/logger-interceptor.service';
 import { HeaderComponent} from './header/header.component';
-import { TodoComponent} from '../modules/todo/containers/todo/todo.component';
 import { HomeComponent} from '../modules/home/containers/home/home.component';
-import { AboutComponent} from '../modules/about/containers/about/about.component';
 import { NavbarComponent} from '../core/navbar/navbar.component';
 import { DetailsComponent } from './details/details.component';
 
 const COMPONENTS = [
   HeaderComponent,
-  TodoComponent,
   HomeComponent,
-  AboutComponent,
   NavbarComponent
 ];
 

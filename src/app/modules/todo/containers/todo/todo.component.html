@@ -1,30 +1,48 @@
-<div class="container">
+<div class="container" *ngFor="let todo of todos">
+  <form  id="userform" class="myForm">
 
-  <h1>ToDo</h1>
-  <form>
-    <div class="form-group" *ngFor="let todo of todos">
-      <em class="form-control" >
-        <h4>
-          Todo: {{todo.name}}
-        </h4>
-      </em><hr>
-      <em class="form-control">
-        <h4>
-          Finished: {{todo.finished}}
-        </h4>
-      </em><hr>
-      <em class="form-control">
-        <h4>
-          Date: {{todo.finishedAt.date}}
-        </h4>
-      </em><hr>
-      <em class="form-control">
-        <h4>
-          Todo description: {{todo.finishedAt.description}}
-        </h4>
-      </em><hr>
+    <h2> ToDo </h2>
+    <p>Please, enter  your tasks in the form bellow</p>
+
+    <div class="form-group">
+      <label class="form-check-label"> Todo: {{todo.name}}</label><br>
+      <input      type="text"
+                  class="form-control myInputStyle"
+                  name="name"
+                  placeholder="Enter your ToDo name"
+                  required [(ngModel)]="contacts.firstname">
     </div>
-  </form>
-  <button class='btn btn-success'>Click</button>
 
+    <div class="form-group">
+      <label class="form-check-label">Finished: {{todo.finished}}</label><br>
+      <input type="text"
+             class="form-control form-control-sm myInputStyle"
+             name="finished"
+             placeholder="Enter your ToDo status"
+             required [(ngModel)]="contacts.lastname">
+    </div>
+
+    <div class="form-group ">
+      <label class="form-check-label">Date:{{todo.finishedAt.date}}</label><br>
+      <input type="text"
+             class="form-control myInputStyle"
+             name="finishedAt"
+             placeholder="Enter your ToDo date here..."
+             required [(ngModel)]="contacts.email">
+    </div>
+
+    <div class="form-group">
+      <label class="form-check-label"> Todo Description {{todo.finishedAt.description}}</label> <br>
+      <textarea name="description"
+                rows="10"
+                class="form-control myInputStyle"
+                required [(ngModel)]="contacts.text">Enter your ToDo here...
+    </textarea>
+    </div>
+
+    <button type="button" class="btn btn-sm btn-outline-primary" (click)="onSubmit(submit)"> Submit</button>
+
+  </form>
 </div>
+
+

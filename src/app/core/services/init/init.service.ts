@@ -10,7 +10,6 @@ export class InitService {
   constructor() {
   }
 
-
   getConfigurations() {
 
     console.log(`initializeApp:: inside getConfigurations function!`);
@@ -24,7 +23,7 @@ export class InitService {
 
         // doing something
         resolve();
-      }, 3000);
+      }, 1000);
     });
   }
 }

@@ -1,21 +1,28 @@
-import {ModuleWithProviders, NgModule} from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './modules/home/containers/home/home.component';
-import { TodoComponent } from './modules/todo/containers/todo/todo.component';
-import {ContactComponent} from './modules/contact/containers/contact/contact.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    pathMatch: 'full'
   },
   {
     path: 'todo',
-    component: TodoComponent
+    loadChildren: './modules/todo/todo.module#TodoModule'
+  },
+  {
+    path: 'about',
+    loadChildren: './modules/about/about.module#AboutModule'
   },
   {
     path: 'contact',
-    component: ContactComponent
+    loadChildren: './modules/contact/contact.module#ContactModule'
+  },
+  {
+    path: '**',
+    component: HomeComponent
   }
 ];
 export const appRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

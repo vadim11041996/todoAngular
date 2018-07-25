@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import Contacts from '../../../../shared/models/contacts';
 
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -10,7 +9,7 @@ import Contacts from '../../../../shared/models/contacts';
 export class ContactComponent implements OnInit {
   submitted = false;
 
-  contacts =
+  contacts : Contacts =
     {
       firstname: '',
       lastname: '',
@@ -40,6 +39,4 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  // alert('Success! \n\n' + JSON.stringify(this.name));
 }

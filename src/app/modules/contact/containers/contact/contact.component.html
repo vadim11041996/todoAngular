@@ -1,33 +1,47 @@
-<form  id="userform">
+<div class="container">
+<form  id="userform" class="myForm">
 
-  <h2> Contacts </h2><br>
-  <p>If you want to contact us, please enter your data in the form bellow</p><br><br>
+  <h2> Contact Us </h2><br>
+  <p>If you want to contact us, please enter your data in the form bellow</p>
 
   <div class="form-group">
-    First name:<br>
-    <input
-      type="text" name="firstname" required [(ngModel)]="contacts.firstname"  value="Enter your first name">
-    <br><br>
+    <label class="form-check-label">First name</label><br>
+    <input      type="text"
+                class="form-control myInputStyle"
+                name="firstname"
+                placeholder="Enter your first name"
+                required [(ngModel)]="contacts.firstname">
   </div>
 
   <div class="form-group">
-    Last name:<br>
-    <input type="text" name="lastname" required [(ngModel)]="contacts.lastname"  value="Enter your last name">
-    <br><br>
+    <label class="form-check-label">Last name:</label><br>
+      <input type="text"
+             class="form-control form-control-sm myInputStyle"
+             name="lastname"
+             placeholder="Enter your last name"
+             required [(ngModel)]="contacts.lastname">
+  </div>
+
+  <div class="form-group ">
+    <label class="form-check-label">Email address</label><br>
+    <input type="text"
+           class="form-control myInputStyle"
+           name="email"
+           placeholder="Enter your email here..."
+           required [(ngModel)]="contacts.email">
   </div>
 
   <div class="form-group">
-    Email:<br>
-    <input type="text" name="email"required [(ngModel)]="contacts.email" value="Enter your email here...">
-    <br><br>
-  </div>
-
-  <div class="form-group">
-    Message:<br>
-    <textarea name="text"  required [(ngModel)]="contacts.text"  form="userform">Enter your message  here...</textarea>
-    <br><br>
+    <label class="form-check-label">Message</label> <br>
+    <textarea name="text"
+              rows="10"
+              class="form-control myInputStyle"
+              placeholder="Enter your message here..."
+              required [(ngModel)]="contacts.text">
+    </textarea>
   </div>
 
   <button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="onSubmit(submit)"> Submit</button>
 
 </form>
+</div>
