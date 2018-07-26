@@ -1,46 +1,97 @@
 <div class="container" >
-  <form  id="userform" class="myForm">
+
+  <form  id="userform" class="myForm"  [formGroup]="contactForm" (submit)="onSubmit()">
 
     <h2> ToDo </h2>
     <p>Please, enter  your tasks in the form bellow</p>
 
     <div class="form-group">
-      <label class="form-check-label"> Todo: {{todo.name}}</label><br>
+      <label class="form-check-label"> Todo:</label><br>
       <input      type="text"
                   class="form-control myInputStyle"
-                  name="name"
-                  placeholder="Enter your ToDo name"
->
+                  formControlName="name"
+                  placeholder="Enter your ToDo name">
     </div>
 
     <div class="form-group">
-      <label class="form-check-label">Finished: {{todo.finished}}</label><br>
-      <input type="text"
-             class="form-control form-control-sm myInputStyle"
-             name="finished"
-             placeholder="Enter your ToDo status"
-             >
-    </div>
-
-    <div class="form-group ">
-      <label class="form-check-label">Date:{{todo.finishedAt.date}}</label><br>
-      <input type="text"
-             class="form-control myInputStyle"
-             name="finishedAt"
-             placeholder="Enter your ToDo date here..."
-             >
+      <label class="form-check-label">ToDo status: </label><br>
+      <select name="status"
+              class="form-control myInputStyle"
+              formControlName="status">
+        <option value="finished">Finished</option>
+        <option value="unfinished">Unfinished</option>
+      </select>
     </div>
 
     <div class="form-group">
-      <label class="form-check-label"> Todo Description {{todo.finishedAt.description}}</label> <br>
-      <textarea name="description"
+      <label class="form-check-label"> Todo Description</label> <br>
+      <textarea formControlName="description"
                 rows="10"
-                class="form-control myInputStyle"
-                >Enter your ToDo here...
+                class="form-control myInputStyle">Enter your ToDo here...
     </textarea>
     </div>
 
-    <button type="button" class="btn btn-sm btn-outline-primary" (click)="onSubmit(submit)"> Submit</button>
+    <button type="button" class="btn btn-sm btn-outline-primary buttonnice" [disabled]="contactForm.invalid"  (click)="onSubmit()">Submit</button><br><br>
+  </form><hr>
 
+  <button type="button" class="btn btn-sm btn-outline-primary buttonstop" (click)="onDeleteAll()">Delete All ToDos</button><br><br>
+
+  <form class="myForm">
+    <div class="form-group " [formGroup]="contactForm" (submit)="onSubmit()">
+      <label class="form-check-label">Find Todo:</label><br>
+      <input type="text"
+             class="form-control myInputStyle"
+             #input
+             formControlName="name"
+             (keyup)="onFindTodo(input.value)"
+             placeholder="Enter your ToDo name here...">
+    </div>
+
+    <div *ngFor="let todo of result" class="col-sm-4 card mycont">
+      <h5 class="cardbutton-title">
+        <b>Todo name:</b> {{todo.name}}
+      </h5>
+      <h5 class="card-title ">
+        <b>Status:</b> {{todo.status}}
+      </h5>
+      <h5 class="card-title ">
+        <b>Date of creation:</b> {{todo.date | date:'dd MMM yyyy'}}
+      </h5>
+      <h5 class="card-text ">
+        <b>Description:</b> {{todo.description}}
+      </h5>
+      <button type="button" (click)="onDeleteOne(todo.name)" class="btn btn-sm btn-outline-primary buttonstop" >Delete</button> <br><br>
+    </div>
   </form>
+
 </div>
+
+
+
+<!--
+<br>
+  <form>
+    <div class="form-group">
+      <div class="col-sm-4 card " *ngFor="let todo of todoService.getAllTodos();">
+        <div class="card-body" #Input id='todoDiv'>
+          <button type="button" (click)="onDelete(Input.value)" class="btn btn-sm btn-outline-primary" >delete</button>
+          <h5 class="cardbutton-title">
+            <b>Todo:</b>
+            {{todo.name}}
+          </h5>
+          <h5 class="card-title ">
+            <b>ToDo status:</b>
+            {{todo.status}}
+          </h5>
+            <h5 class="card-title ">
+              <b>Date of creation:</b>
+              {{todo.date}}
+          </h5>
+          <h5 class="card-text ">
+            <b>ToDo description:</b>
+            {{todo.description}}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </form>-->
